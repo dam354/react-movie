@@ -1,5 +1,5 @@
 import React from 'react';
-// import "./styles.css";npm
+import './styles.css';
 
 import Header from './components/Header';
 
@@ -12,21 +12,21 @@ export default function App() {
   return (
     <div className="App bg-gray-300">
       <Header />
+      <main className="flex-1">
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-
-        <Route path="/movie/:movieId">
-          <MoviePage />
-        </Route>
-        <Route path="/search/:query">
-          <SearchResults />
-        </Route>
-      </Switch>
-
-      <footer className="h-20 bg-black text-white text-xl font-bold items-center sticky bot-0" />
+          <Route path="/movie/:movieId">
+            <MoviePage />
+          </Route>
+          <Route path="/search/:query">
+            <SearchResults />
+          </Route>
+        </Switch>
+      </main>
+      <footer className="h-20 bg-black text-white text-xl font-bold items-center pin-b " />
     </div>
   );
 }
